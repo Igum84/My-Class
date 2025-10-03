@@ -1,0 +1,367 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* --- PENGATURAN STICKY FOOTER --- */
+html {
+    height: 100%;
+}
+body {
+    display: flex; /* AKTIFKAN FLEGBOX */
+    flex-direction: column; /* Susun vertikal: Header, Main, Footer */
+    min-height: 100vh; /* Pastikan body setidaknya setinggi viewport */
+    background: #f4f7fc;
+    color: #333;
+}
+main {
+    flex-grow: 1; /* Konten utama mengambil semua ruang vertikal yang tersisa */
+}
+/* ---------------------------------- */
+
+
+/* --- HEADER & NAVBAR (DESKTOP) --- */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  background: #0e7c7c;
+  position: relative;
+}
+/* Logo image kecil & teks */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo-img {
+  width: 34px; /* kecil */
+  height: 34px;
+  object-fit: contain;
+  border-radius: 6px;
+}
+
+.logo-text {
+  color: #ffe082; /* warna teks logo baru, bisa diganti */
+  font-weight: 700;
+}
+
+@media (max-width: 480px) {
+  .logo-img {
+    width: 28px;
+    height: 28px;
+  }
+  .logo-text {
+    font-size: 16px;
+  }
+}
+nav ul {
+  list-style: none;
+  display: flex; 
+  gap: 20px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* Tombol hamburger (TERSEMBUNYI di desktop) */
+.menu-toggle {
+  display: none; 
+}
+
+/* --- HERO SECTION --- */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px;
+  flex-wrap: wrap;
+}
+
+.hero-text {
+  max-width: 50%;
+}
+
+.hero-text h1 {
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+.hero-text button {
+  padding: 10px 20px;
+  background: #2F4F4F;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 18px; /* beri jarak dari elemen di atas */
+  transition: background-color 0.18s ease, transform 0.15s ease, box-shadow 0.18s ease;
+  box-shadow: 0 6px 14px rgba(47,79,79,0.14);
+  will-change: transform, box-shadow;
+}
+
+.hero-text button:hover {
+  background: #1f3b3b; /* sedikit lebih gelap */
+  transform: translateY(-4px);
+  box-shadow: 0 10px 22px rgba(47,79,79,0.18);
+}
+
+.hero-text button:active {
+  transform: translateY(-1px) scale(0.996);
+  box-shadow: 0 6px 12px rgba(47,79,79,0.12);
+}
+
+.hero-text button:focus-visible {
+  outline: 3px solid rgba(0,86,210,0.22);
+  outline-offset: 3px;
+}
+
+.hero-image img {
+  max-width: 400px;
+  border-radius: 12px;
+}
+
+/* --- MENU BELAJAR --- */
+.menu-belajar {
+  padding: 50px;
+  text-align: center;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  cursor: pointer;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.card i {
+  margin-right: 10px;
+  font-size: 20px;
+  vertical-align: middle;
+}
+
+.card:hover i {
+  color: inherit; /* ikon mengikuti warna teks pada hover */
+}
+
+.card:hover {
+  background: #08241e;
+  color: rgb(222, 238, 80);
+  transform: translateY(-5px);
+}
+
+/* --- FOOTER STYLES --- */
+footer {
+  /* Tidak perlu margin-top: auto karena <main> sudah mengambil ruang sisa */
+  background: #118585;
+  color: white;
+  text-align: center;
+  padding: 25px 15px;
+}
+
+.footer-content p {
+    margin-bottom: 10px; 
+    line-height: 1.5;
+    font-size: 14px;
+}
+.footer-content p:last-of-type {
+    margin-bottom: 15px; 
+}
+
+
+.social-icons {
+    margin-top: 15px;
+}
+
+.social-icons a {
+    color: white; /* Warna ikon default */
+    font-size: 24px;
+    margin: 0 10px; /* Jarak antar ikon */
+    transition: color 0.3s ease; /* Transisi warna saat hover */
+    display: inline-block;
+}
+
+/* Efek Hover (Warna Asli Logo) */
+.social-icons a .fa-youtube:hover {
+    color: #FF0000; 
+}
+
+.social-icons a .fa-facebook-f:hover {
+    color: #3b5998;
+}
+
+.social-icons a .fa-instagram:hover {
+    color: #E1306C;
+}
+
+.social-icons a .fa-whatsapp:hover {
+    color: #25D366;
+}
+
+.social-icons a .fa-envelope:hover {
+    color: #BB001B;
+}
+
+/* ---------------------------------------------------------------- */
+/* --- RESPONSIVE MOBILE (Max-Width 768px) --- */
+/* ---------------------------------------------------------------- */
+@media (max-width: 768px) {
+    /* 1. Navbar dan Hamburger */
+    header {
+        padding: 15px 20px;
+    }
+
+    .menu-toggle {
+        display: block; 
+        font-size: 28px;
+        z-index: 10; 
+    }
+    
+    nav {
+        position: absolute;
+        top: 60px; 
+        right: 0;
+        left: 0;
+        width: 100%;
+        background: #0056d2;
+        overflow: hidden;
+        
+        max-height: 0; 
+        transition: max-height 0.4s ease-in-out;
+        z-index: 5;
+    }
+
+    nav.show {
+        max-height: 300px; 
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    nav ul {
+        flex-direction: column; 
+        align-items: center; 
+        padding: 15px 0;
+        gap: 0;
+    }
+
+    nav ul li {
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    nav ul li:last-child {
+        border-bottom: none;
+    }
+
+
+    /* 2. Tata Letak Konten Lainnya */
+    .hero {
+        flex-direction: column; 
+        text-align: center;
+        padding: 30px 20px;
+    }
+
+    .hero-text {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+  /* Lebih banyak spasi untuk tombol di layar kecil */
+  .hero-text button {
+    margin-top: 26px;
+  }
+
+    .hero-image img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .menu-belajar {
+        padding: 30px 20px;
+    }
+
+    .menu-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    /* Footer Mobile */
+    .social-icons a {
+        font-size: 22px; 
+        margin: 0 8px;
+    }
+}
+
+/* Responsif untuk layar sangat kecil */
+@media (max-width: 480px) {
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --- HOVER & FOCUS: Hamburger dan Menu Items --- */
+.menu-toggle {
+  cursor: pointer;
+  transition: color 0.18s ease, transform 0.15s ease, background-color 0.18s ease;
+  padding: 6px;
+  border-radius: 6px;
+}
+
+.menu-toggle:hover,
+.menu-toggle:focus {
+  color: #fffbe6; /* sedikit lebih terang saat hover */
+  background: rgba(255,255,255,0.06);
+  transform: scale(1.06);
+  outline: none;
+}
+
+/* Desktop: link navigation hover */
+nav ul li a:hover,
+nav ul li a:focus {
+  color: #fffbe6;
+  text-decoration: underline;
+}
+/* Mobile: beri efek latar pada setiap item saat hover/aktif */
+@media (max-width: 768px) {
+  nav ul li {
+    transition: background 0.18s ease;
+  }
+
+  nav ul li:hover {
+    background: rgba(255,255,255,0.04);
+  }
+
+  nav ul li a {
+    display: block; /* pastikan area klik penuh */
+    padding: 10px 0;
+    transition: background 0.18s ease, color 0.18s ease;
+  }
+
+  nav ul li a:hover,
+  nav ul li a:focus {
+    background: rgba(255,255,255,0.10);
+    color: #ffffff;
+  }
+}
+
+/* Fokus yang jelas untuk pengguna keyboard */
+.menu-toggle:focus-visible,
+nav ul li a:focus-visible {
+  outline: 2px solid rgba(255,255,255,0.22);
+  outline-offset: 3px;
+}
