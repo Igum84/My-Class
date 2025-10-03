@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Materi Pembelajaran</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="logo.png" alt="Logo Ruang Kelas" class="logo-img">
+      <span class="logo-text">Ruang Kelas Digital</span>
+    </div>
+    <div class="menu-toggle" role="button" aria-controls="nav-menu" aria-expanded="false" onclick="toggleMenu()">&#9776;</div>
+    <nav id="nav-menu">
+      <ul>
+        <li><a href="index.HTML">Beranda</a></li>
+        <li><a href="materi.html" class="active">Materi</a></li>
+        <li><a href="#">Diskusi</a></li>
+        <li><a href="#">Kontak</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="materi-section">
+      <h2>Daftar Materi</h2>
+      <div class="materi-grid">
+        <div class="materi-card" 
+          data-x="link-mtk-x" data-xi="link-mtk-xi.html" data-xii="link-mtk-xii.html">
+          <img src="matematika.jpg">
+          <div class="materi-card-body">
+            <h3>Matematika</h3>
+          </div>
+        </div>
+        <div class="materi-card" 
+          data-x="link-bindo-x.html" data-xi="link-bindo-xi.html" data-xii="link-bindo-xii.html">
+          <img src="bindo.jpeg">
+          <div class="materi-card-body">
+            <h3>Bahasa Indonesia</h3>
+          </div>
+        </div>
+        <div class="materi-card" 
+          data-x="link-bing-x.html" data-xi="link-bing-xi.html" data-xii="link-bing-xii.html">
+          <img src="bing.jpg">
+          <div class="materi-card-body">
+            <h3>Bahasa Inggris</h3>
+          </div>
+        </div>
+        <div class="materi-card" 
+          data-x="link-pai-x.html" data-xi="link-pai-xi.html" data-xii="link-pai-xii.html">
+          <img src="PAI.jpg">
+          <div class="materi-card-body">
+            <h3>PAI</h3>
+          </div>
+        </div>
+        <div class="materi-card" 
+          data-x="link-pkn-x.html" data-xi="link-pkn-xi.html" data-xii="link-pkn-xii.html">
+          <img src="PKN.jpeg">
+          <div class="materi-card-body">
+            <h3>PKN</h3>
+          </div>
+        </div>
+        <div class="materi-card" 
+          data-x="link-sejarah-x.html" data-xi="link-sejarah-xi.html" data-xii="link-sejarah-xii.html">
+          <img src="sejarah.jpg">
+          <div class="materi-card-body">
+            <h3>Sejarah Indonesia</h3>
+          </div>
+        </div>
+
+      </div>
+
+      
+    </section>
+  </main>
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2025 RuangKelas Digital | Belajar Tanpa Batas</p>
+      <p><strong>Alamat:</strong> Jl. Raya Pangkal Pinang-Mentok, Desa Berang kecamatan Simpang Teritip Kabupaten Bangka Barat Provinsi Kepulauan Bangka Belitung-33366</p>
+      <div class="social-icons">
+        <a href="https://www.youtube.com/" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://wa.me/6281234567890" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="mailto:info@ruangkelasdigital.com" target="_blank" aria-label="Email"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+  <!-- Modal Pilihan Kelas -->
+  <div id="modalKelas" class="modal-kelas">
+    <div class="modal-kelas-content">
+      <span class="modal-kelas-close" id="closeModalKelas">&times;</span>
+      <h3>Pilih Kelas</h3>
+      <div class="modal-kelas-list">
+        <a href="#" class="modal-kelas-item" id="kelasX">Kelas X</a>
+        <a href="#" class="modal-kelas-item" id="kelasXI">Kelas XI</a>
+        <a href="#" class="modal-kelas-item" id="kelasXII">Kelas XII</a>
+      </div>
+    </div>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var modal = document.getElementById('modalKelas');
+      var closeBtn = document.getElementById('closeModalKelas');
+      var linkX = document.getElementById('kelasX');
+      var linkXI = document.getElementById('kelasXI');
+      var linkXII = document.getElementById('kelasXII');
+      document.querySelectorAll('.materi-card').forEach(function(card) {
+        card.addEventListener('click', function(e) {
+          // Ambil link dari atribut data
+          linkX.href = card.getAttribute('data-x');
+          linkXI.href = card.getAttribute('data-xi');
+          linkXII.href = card.getAttribute('data-xii');
+          modal.style.display = 'flex';
+          e.stopPropagation();
+        });
+      });
+      closeBtn.onclick = function() {
+        modal.style.display = 'none';
+      };
+      window.onclick = function(event) {
+        if (event.target === modal) {
+          modal.style.display = 'none';
+        }
+      };
+    });
+  </script>
+</body>
+</html>
