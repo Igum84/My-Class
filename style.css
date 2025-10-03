@@ -1,3 +1,118 @@
+/* --- MODAL PILIHAN KELAS --- */
+.modal-kelas {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.32);
+  align-items: center;
+  justify-content: center;
+}
+.modal-kelas-content {
+  background: #fff;
+  border-radius: 14px;
+  padding: 32px 28px 24px 28px;
+  min-width: 220px;
+  max-width: 90vw;
+  box-shadow: 0 10px 32px rgba(0,0,0,0.18);
+  text-align: center;
+  position: relative;
+  animation: fadeInModal 0.18s;
+}
+.modal-kelas-close {
+  position: absolute;
+  top: 12px;
+  right: 18px;
+  font-size: 1.6rem;
+  color: #0e7c7c;
+  cursor: pointer;
+  font-weight: bold;
+  transition: color 0.18s;
+}
+.modal-kelas-close:hover {
+  color: #d32f2f;
+}
+.modal-kelas-list {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.modal-kelas-item {
+  display: block;
+  padding: 12px 0;
+  background: #e0f7fa;
+  color: #0e7c7c;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: background 0.18s, color 0.18s;
+  cursor: pointer;
+}
+.modal-kelas-item:hover {
+  background: #0e7c7c;
+  color: #fff;
+}
+@keyframes fadeInModal {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
+}
+/* --- DROPDOWN MATERI DI CARD --- */
+.dropdown-materi {
+  display: none;
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  transform: translateX(-50%);
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.13);
+  border-radius: 8px;
+  min-width: 120px;
+  margin-top: 10px;
+  z-index: 10;
+  padding: 8px 0;
+  animation: fadeInDropdown 0.18s;
+}
+.dropdown-materi.show {
+  display: block;
+}
+.dropdown-item {
+  display: block;
+  padding: 10px 22px;
+  color: #0e7c7c;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: background 0.15s, color 0.15s;
+  border: none;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+}
+.dropdown-item:hover {
+  background: #e0f7fa;
+  color: #2F4F4F;
+}
+@keyframes fadeInDropdown {
+  from { opacity: 0; transform: translateX(-50%) translateY(-10px); }
+  to { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+.materi-card {
+  position: relative;
+}
+.materi-card {
+  transition: transform 0.25s cubic-bezier(.4,1.5,.5,1), box-shadow 0.18s;
+}
+
+.materi-card:hover {
+  transform: scale(1.08);
+  z-index: 2;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.16);
+}
 * {
   margin: 0;
   padding: 0;
@@ -130,7 +245,7 @@ nav ul li a {
 
 /* --- MENU BELAJAR --- */
 .menu-belajar {
-  padding: 50px;
+  padding: 80px;
   text-align: center;
 }
 
@@ -173,6 +288,95 @@ footer {
   color: white;
   text-align: center;
   padding: 25px 15px;
+}
+
+/* --- MATERI PAGE STYLES --- */
+.materi-section {
+  padding: 70px 40px 60px 40px;
+  text-align: center;
+}
+
+.materi-section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 36px;
+  color: #0e7c7c;
+}
+
+.materi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 32px;
+  justify-items: center;
+}
+
+.materi-card {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.10);
+  overflow: hidden;
+  max-width: 340px;
+  transition: transform 0.18s, box-shadow 0.18s;
+  display: flex;
+  flex-direction: column;
+}
+
+.materi-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+.materi-card-body {
+  padding: 22px 18px 18px 18px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.materi-card-body h3 {
+  font-size: 1.18rem;
+  margin-bottom: 10px;
+  color: #0e7c7c;
+}
+
+.materi-card-body p {
+  font-size: 0.98rem;
+  color: #444;
+  margin-bottom: 18px;
+}
+
+.materi-card-body button {
+  padding: 8px 18px;
+  background: #2F4F4F;
+  color: #fff;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.18s, transform 0.15s;
+}
+
+.materi-card-body button:hover {
+  background: #0e7c7c;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .materi-section {
+    padding: 40px 10px 30px 10px;
+  }
+  .materi-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .materi-card {
+    max-width: 170px;
+  }
+  .materi-card img {
+    height: 90px;
+  }
 }
 
 .footer-content p {
@@ -312,6 +516,16 @@ footer {
     .menu-grid {
         grid-template-columns: 1fr;
     }
+  .materi-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .materi-card {
+    max-width: 140px;
+  }
+  .materi-card img {
+    height: 60px;
+  }
 }
 
 /* --- HOVER & FOCUS: Hamburger dan Menu Items --- */
