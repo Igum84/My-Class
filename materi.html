@@ -9,34 +9,31 @@
 </head>
 <body>
   <header>
-  <div class="logo">
-    <img src="logo.jpg" alt="Logo Ruang Kelas" class="logo-img">
-    <span class="logo-text">SMK NEGERI 1 SIMPANG TERITIP</span>
-  </div>
-
-  <div class="menu-toggle" role="button" aria-controls="nav-menu" aria-expanded="false" onclick="toggleMenu()">☰</div>
-
-  <nav id="nav-menu">
-    <ul>
-  <li><a href="index.html">Beranda</a></li>
-  <li><a href="materi.html">Materi</a></li>
-      <li><a href="#">Diskusi</a></li>
-      <li><a href="#">Kontak</a></li>
-    </ul>
-  </nav>
-</header>
+    <div class="logo">
+      <img src="logo.png" alt="Logo Ruang Kelas" class="logo-img">
+      <span class="logo-text">Ruang Kelas Digital</span>
+    </div>
+    <div class="menu-toggle" role="button" aria-controls="nav-menu" aria-expanded="false" onclick="toggleMenu()">&#9776;</div>
+    <nav id="nav-menu">
+      <ul>
+        <li><a href="index.HTML">Beranda</a></li>
+        <li><a href="materi.html" class="active">Materi</a></li>
+        <li><a href="#">Diskusi</a></li>
+        <li><a href="#">Kontak</a></li>
+      </ul>
+    </nav>
+  </header>
   <main>
     <section class="materi-section">
       <h2>Daftar Materi</h2>
-<div class="materi-card" 
-  data-x="https://drive.google.com/file/d/1hc34IA-05etkz5nJyarpsZRAafpXlBwj/view?usp=sharing"
-  data-xi="https://drive.google.com/file/d/1SraJbBWzt_8sCR2PCbA__ozEuByJ5qWR/view?usp=sharing"
-  data-xii="https://drive.google.com/file/d/1V58lvq2gDljZkQWB2iT5smbRCS-XvnW7/view?usp=sharing">
-  <img src="matematika.jpg">
-  <div class="materi-card-body">
-    <h3>Matematika</h3>
-  </div>
-</div>
+      <div class="materi-grid">
+        <div class="materi-card" 
+          data-x="link-mtk-x" data-xi="link-mtk-xi.html" data-xii="link-mtk-xii.html">
+          <img src="matematika.jpg">
+          <div class="materi-card-body">
+            <h3>Matematika</h3>
+          </div>
+        </div>
         <div class="materi-card" 
           data-x="link-bindo-x.html" data-xi="link-bindo-xi.html" data-xii="link-bindo-xii.html">
           <img src="bindo.jpeg">
@@ -73,13 +70,6 @@
           </div>
         </div>
 
-        <div class="materi-card" 
-          data-x="link-sejarah-x.html" data-xi="link-sejarah-xi.html" data-xii="link-sejarah-xii.html">
-          <img src="olahraga.jpg">
-          <div class="materi-card-body">
-            <h3>PJOK</h3>
-          </div>
-        </div>
       </div>
 
       
@@ -105,9 +95,9 @@
       <span class="modal-kelas-close" id="closeModalKelas">&times;</span>
       <h3>Pilih Kelas</h3>
       <div class="modal-kelas-list">
-        <a href="#" class="modal-kelas-item" id="kelasX">Kelas X</a>
-        <a href="#" class="modal-kelas-item" id="kelasXI">Kelas XI</a>
-        <a href="#" class="modal-kelas-item" id="kelasXII">Kelas XII</a>
+  <a href="#" class="modal-kelas-item" id="kelasX" target="_blank" rel="noopener">Kelas X</a>
+  <a href="#" class="modal-kelas-item" id="kelasXI" target="_blank" rel="noopener">Kelas XI</a>
+  <a href="#" class="modal-kelas-item" id="kelasXII" target="_blank" rel="noopener">Kelas XII</a>
       </div>
     </div>
   </div>
@@ -140,15 +130,3 @@
   </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
