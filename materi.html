@@ -28,7 +28,9 @@
       <h2>Daftar Materi</h2>
       <div class="materi-grid">
         <div class="materi-card" 
-          data-x="link-mtk-x" data-xi="link-mtk-xi.html" data-xii="link-mtk-xii.html">
+          data-x="https://drive.google.com/file/d/1hc34IA-05etkz5nJyarpsZRAafpXlBwj/view?usp=sharing"
+          data-xi="https://drive.google.com/file/d/1SraJbBWzt_8sCR2PCbA__ozEuByJ5qWR/view?usp=sharing"
+          data-xii="https://drive.google.com/file/d/1V58lvq2gDljZkQWB2iT5smbRCS-XvnW7/view?usp=sharing">
           <img src="matematika.jpg">
           <div class="materi-card-body">
             <h3>Matematika</h3>
@@ -110,12 +112,20 @@
       var linkXII = document.getElementById('kelasXII');
       document.querySelectorAll('.materi-card').forEach(function(card) {
         card.addEventListener('click', function(e) {
-          // Ambil link dari atribut data
           linkX.href = card.getAttribute('data-x');
           linkXI.href = card.getAttribute('data-xi');
           linkXII.href = card.getAttribute('data-xii');
           modal.style.display = 'flex';
           e.stopPropagation();
+        });
+      });
+      // Pastikan klik pada link di modal tidak menutup modal sebelum link terbuka
+      [linkX, linkXI, linkXII].forEach(function(link) {
+        link.addEventListener('click', function(e) {
+          // Biarkan link berjalan normal (karena target _blank), modal tetap terbuka
+          // Modal akan tertutup otomatis jika user kembali
+          // Tidak perlu e.preventDefault();
+          modal.style.display = 'none';
         });
       });
       closeBtn.onclick = function() {
