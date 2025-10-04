@@ -1,0 +1,133 @@
+/* --- KELAS X PAGE STYLES --- */
+.kelasx-section {
+  padding: 70px 40px 60px 40px;
+  text-align: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #e0f7fa 0%, #f8fafc 100%);
+  position: relative;
+  z-index: 1;
+}
+
+body {
+  background: repeating-linear-gradient(135deg, #e0f7fa 0 2px, #f8fafc 2px 40px);
+}
+.kelasx-section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 36px;
+  color: #0e7c7c;
+  text-align: center;
+}
+.bab-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.bab-block {
+  background: linear-gradient(135deg, #232b3b 0%, #3a445c 100%);
+  border-radius: 18px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.13);
+  padding: 28px 18px 22px 18px;
+  margin-bottom: 0;
+  transition: box-shadow 0.18s;
+}
+.bab-block:hover {
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+}
+.bab-block h3 {
+  text-align: center;
+  color: #ffe082;
+  margin-bottom: 18px;
+  font-size: 1.18rem;
+  font-weight: 700;
+}
+.bab-block h3 {
+  text-align: center;
+  color: #ffe082;
+  margin-bottom: 18px;
+  font-size: 1.18rem;
+  font-weight: 700;
+}
+.kelasx-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 24px;
+  justify-items: center;
+}
+.kelasx-card {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.10);
+  overflow: hidden;
+  width: 210px;
+  height: 290px;
+  max-width: 100%;
+  transition: transform 0.22s, box-shadow 0.18s;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.kelasx-card:hover {
+  transform: scale(1.06);
+  z-index: 2;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.16);
+}
+.kelasx-card img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  display: block;
+}
+.kelasx-card-body {
+  padding: 14px 12px 10px 12px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.kelasx-card-body h4 {
+  font-size: 1.05rem;
+  margin-bottom: 7px;
+  color: #0e7c7c;
+}
+.kelasx-card-body p {
+  font-size: 0.95rem;
+  color: #444;
+  margin-bottom: 0;
+  text-align: center;
+}
+@media (max-width: 900px) {
+  .kelasx-section {
+    padding: 40px 10px 30px 10px;
+  }
+  .kelasx-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  .kelasx-card {
+    width: 140px;
+    height: 200px;
+  }
+  .kelasx-card img {
+    height: 70px;
+  }
+}
+@media (max-width: 480px) {
+  .kelasx-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  .kelasx-card {
+    width: 100px;
+    height: 140px;
+  }
+  .kelasx-card img {
+    height: 45px;
+  }
+  .kelasx-card-body h4 {
+    font-size: 0.92rem;
+  }
+  .kelasx-card-body p {
+    font-size: 0.78rem;
+  }
+}
